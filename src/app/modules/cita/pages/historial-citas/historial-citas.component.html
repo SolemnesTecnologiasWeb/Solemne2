@@ -1,7 +1,13 @@
 <h2>Historial de Citas</h2>
 
-<table mat-table [dataSource]="citas" class="mat-elevation-z2" style="width: 100%;">
-
+<mat-form-field appearance="outline" style="width: 100%; max-width: 400px; margin-bottom: 20px;">
+    <mat-label>Buscar por paciente o médico</mat-label>
+    <input matInput #inputBuscador (input)="dataSource.filter = inputBuscador.value.trim().toLowerCase()" placeholder="Ej: Valentina o Soto">
+  </mat-form-field>
+  
+  
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z2" style="width: 100%;">
+  
   <!-- Paciente -->
   <ng-container matColumnDef="paciente">
     <th mat-header-cell *matHeaderCellDef> Paciente </th>
