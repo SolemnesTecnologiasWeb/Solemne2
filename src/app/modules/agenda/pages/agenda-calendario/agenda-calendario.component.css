@@ -1,0 +1,117 @@
+h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #018988;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .calendario-container {
+    overflow-x: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .calendario-citas {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .calendario-citas thead {
+    background-color: #009999;
+    color: white;
+  }
+  
+  .calendario-citas td {
+    padding: 0;
+    height: 60px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  .calendario-citas th {
+    padding: 6px;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .hora-columna {
+    font-weight: bold;
+    background-color: #f0f0f0;
+  }
+  
+  .bloque-cita {
+    background-color: #1976d2;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 500;
+    height: 60%;              /* ocupa toda la celda */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }  
+  
+  .celda-vacia {
+    height: 100%;
+    display: block;
+  }
+  
+  .seccion-titulo {
+    font-family: 'Roboto', sans-serif;
+    color: #018988;
+    margin-top: 40px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  
+  .tabla-proximas-container {
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    background-color: white;
+  }
+  
+  .tabla-proximas {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .tabla-proximas th {
+    background-color: #009999;
+    color: white;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .tabla-proximas td {
+    padding: 10px;
+    border-top: 1px solid #eee;
+  }
+  
+  .tabla-proximas tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .resumen-citas {
+    margin-top: 24px;
+    padding: 16px;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .resumen-citas mat-card-title {
+    font-size: 20px;
+    color: #018988;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  
