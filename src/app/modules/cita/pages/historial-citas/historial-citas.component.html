@@ -1,11 +1,52 @@
 <h2>Historial de Citas</h2>
 
-<mat-form-field appearance="outline" style="width: 100%; max-width: 400px; margin-bottom: 20px;">
-    <mat-label>Buscar por paciente o médico</mat-label>
-    <input matInput #inputBuscador (input)="dataSource.filter = inputBuscador.value.trim().toLowerCase()" placeholder="Ej: Valentina o Soto">
+<div style="margin-bottom: 20px;">
+    <mat-form-field appearance="outline" style="width: 100%; max-width: 400px;">
+      <mat-label>Buscar por paciente o médico</mat-label>
+      <input matInput [(ngModel)]="filtroTexto" (ngModelChange)="aplicarFiltros()" placeholder="Ej: Valentina o Soto">
+    </mat-form-field>
+</div>
+  
+<div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+    <!-- Filtro por estado -->
+    <mat-form-field appearance="outline" style="width: 200px; margin-right: 15px;">
+     <mat-label>Estado</mat-label>
+     <mat-select [(ngModel)]="filtroEstado" (selectionChange)="aplicarFiltros()">
+        <mat-option value="">Todos</mat-option>
+        <mat-option value="Confirmada">Confirmada</mat-option>
+        <mat-option value="Realizada">Realizada</mat-option>
+        <mat-option value="Cancelada">Cancelada</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+  
+  <!-- Filtro por especialidad -->
+  <mat-form-field appearance="outline" style="width: 200px; margin-right: 15px;">
+    <mat-label>Especialidad</mat-label>
+    <mat-select [(ngModel)]="filtroEspecialidad" (selectionChange)="aplicarFiltros()">
+      <mat-option value="">Todas</mat-option>
+      <mat-option *ngFor="let e of especialidadesUnicas" [value]="e">{{ e }}</mat-option>
+    </mat-select>
   </mat-form-field>
   
   
+  <!-- Filtro por fechas -->
+  <mat-form-field appearance="outline" style="margin-right: 10px;">
+    <mat-label>Desde</mat-label>
+    <input matInput type="date" [(ngModel)]="fechaInicio" (ngModelChange)="aplicarFiltros()">
+  </mat-form-field>
+  
+  <mat-form-field appearance="outline">
+    <mat-label>Hasta</mat-label>
+    <input matInput type="date" [(ngModel)]="fechaFin" (ngModelChange)="aplicarFiltros()">
+  </mat-form-field>
+</div>
+
+<button mat-raised-button color="warn" (click)="limpiarFiltros()" style="margin-bottom: 30px;">
+    Limpiar filtros
+</button>  
+
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z2" style="width: 100%;">
   
   <!-- Paciente -->
@@ -19,6 +60,13 @@
     <th mat-header-cell *matHeaderCellDef> Médico </th>
     <td mat-cell *matCellDef="let cita"> {{ cita.medico }} </td>
   </ng-container>
+
+  <!-- Especialidad -->
+    <ng-container matColumnDef="especialidad">
+      <th mat-header-cell *matHeaderCellDef> Especialidad </th>
+      <td mat-cell *matCellDef="let cita"> {{ cita.especialidad }} </td>
+    </ng-container>
+  
 
   <!-- Fecha -->
   <ng-container matColumnDef="fecha">
