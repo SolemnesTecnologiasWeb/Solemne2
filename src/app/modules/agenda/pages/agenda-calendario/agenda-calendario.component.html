@@ -24,3 +24,35 @@
     </tbody>
   </table>
   
+
+<h2 style="margin-top: 40px;">Próximas citas</h2>
+<div style="max-height: 200px; overflow-y: scroll; border: 1px solid #ccc; border-radius: 6px;">
+  <table style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th style="padding: 8px; text-align: left;">Fecha</th>
+        <th style="padding: 8px; text-align: left;">Hora</th>
+        <th style="padding: 8px; text-align: left;">Doctor</th>
+        <th style="padding: 8px; text-align: left;">Paciente</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cita of citasProximas">
+        <td style="padding: 8px;">{{ cita.fecha }}</td>
+        <td style="padding: 8px;">{{ cita.hora }}</td>
+        <td style="padding: 8px;">{{ cita.medico }}</td>
+        <td style="padding: 8px;">{{ cita.paciente }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<mat-card style="margin-top: 20px; background-color: #f5f5f5;">
+    <mat-card-title>Resumen de Citas</mat-card-title>
+    <mat-card-content>
+      <p><strong>Total de citas esta semana:</strong> {{ citasSemana }}</p>
+      <p><strong>Total de citas este mes:</strong> {{ citasMes }}</p>
+    </mat-card-content>
+</mat-card>
+  
+  
