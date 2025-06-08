@@ -62,20 +62,29 @@ export class HistorialCitasComponent implements OnInit{
       fecha: '2025-06-15',
       hora: '15:00',
       estado: 'Cancelada'
+    },
+    {
+      paciente: 'Diego Vivanco',
+      medico: 'Dra. Renata Jofré',
+      especialidad: 'Dermatología',
+      fecha: '2025-06-30',
+      hora: '12:00',
+      estado: 'Cancelada'
     }
   ];
   
 
   dataSource = new MatTableDataSource(this.citas);
 
-  getColor(estado: string): string {
+  getColorHex(estado: string): string {
     switch (estado) {
-      case 'Confirmada': return 'primary';
-      case 'Realizada': return 'accent';
-      case 'Cancelada': return 'warn';
-      default: return '';
+      case 'Confirmada': return '#99CC00';      // verde
+      case 'Realizada': return '#75C2A6';       // celeste suave
+      case 'Cancelada': return '#CA3E47';       // rojo 
+      default: return '#cccccc';                // gris por defecto
     }
   }
+  
 
   ngOnInit() {
     this.dataSource.filterPredicate = (data, filter) => {
