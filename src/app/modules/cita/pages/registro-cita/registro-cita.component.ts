@@ -41,7 +41,7 @@ export class RegistroCitaComponent {
   registrarCita() {
     if (this.formCita.valid) {
       console.log('Cita registrada:', this.formCita.value);
-      alert('Cita registrada con éxito 🩺');
+      alert('Cita registrada con éxito');
       this.formCita.reset();
     }
   }
