@@ -4,6 +4,6 @@ import { AgendaCalendarioComponent } from './pages/agenda-calendario/agenda-cale
 export const AGENDA_ROUTES: Routes = [
   {
     path: '',
-    component: AgendaCalendarioComponent,
+    component: AgendaCalendarioComponent
   }
 ];

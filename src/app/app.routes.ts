@@ -15,5 +15,9 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'medico',
     pathMatch: 'full'
+  },
+  {
+    path: 'agenda',
+    loadChildren: () => import('./modules/agenda/agenda.routes').then(m => m.AGENDA_ROUTES)
   }
 ];
