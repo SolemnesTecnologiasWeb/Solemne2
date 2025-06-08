@@ -1,1 +1,36 @@
-<p>registro-cita works!</p>
+<h2>Registrar Cita Médica</h2>
+
+<form [formGroup]="formCita" (ngSubmit)="registrarCita()" style="display: grid; gap: 16px; max-width: 500px;">
+
+    <mat-form-field appearance="outline">
+        <mat-label>Paciente</mat-label>
+        <input matInput placeholder="Nombre del paciente" formControlName="paciente" required>
+    </mat-form-field>
+      
+
+  <mat-form-field appearance="outline">
+    <mat-label>Médico</mat-label>
+    <mat-select formControlName="medico">
+      <mat-option *ngFor="let medico of medicos" [value]="medico">
+        {{ medico }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Fecha</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="fecha">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Hora</mat-label>
+    <input matInput type="time" formControlName="hora">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="formCita.invalid">
+    Registrar
+  </button>
+
+</form>

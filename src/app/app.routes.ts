@@ -7,6 +7,11 @@ export const routes: Routes = [
       import('./modules/medico/medico.module').then(m => m.MedicoModule),
   },
   {
+    path: 'cita',
+    loadChildren: () =>
+      import('./modules/cita/cita.module').then(m => m.CitaModule),
+  },
+  {
     path: '',
     redirectTo: 'medico',
     pathMatch: 'full'

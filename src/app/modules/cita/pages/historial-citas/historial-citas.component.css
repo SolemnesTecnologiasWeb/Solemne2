@@ -1,0 +1,15 @@
+mat-chip.mat-primary {
+    background-color: #66ff00;
+    color: white;
+  }
+  
+  mat-chip.mat-accent {
+    background-color: #bd59ff;
+    color: white;
+  }
+  
+  mat-chip.mat-warn {
+    background-color: #ff5448; 
+    color: white;
+  }
+    
