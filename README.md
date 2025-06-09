@@ -24,6 +24,7 @@ SaludPlus es una aplicación web desarrollada en Angular para gestionar el regis
 1. Clona el repositorio:
 
 git clone https://github.com/SolemnesTecnologiasWeb/Solemne2.git
+
 cd Solemne2
 
 2. Instala las dependencias:
